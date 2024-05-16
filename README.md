@@ -15,15 +15,23 @@
 1. `$ pipenv install`
 2. `$ pipenv shell`
 3. `$ docker-compose up -d`
-3. `python database/init_db.py`
-4. `./start.sh`
+4. `export PYTHONPATH=${pwd}`
+5. `python database/init_db.py`
+6. `./start.sh`
 
 <br>
 <br>
 
 # Validation
 1. Open http://localhost:8080/docs
-2. Use POST /lead/ to create a new lead
+2. Use POST /lead/ to create a new lead, selecting a file and this user input
+    ```json
+    {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "johndoer@email.com"
+    }
+    ```
 3. To use the others endpoints just click in Authorize and use {user: admin password: admin}
 
 <br>

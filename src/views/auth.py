@@ -1,12 +1,10 @@
 from asyncio import gather
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, Response, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException
 
 from schemas import (
      ErrorOutput,
-     StandardOutput
 )
-from services.lead import LeadService
 from services.auth import AuthService
 
 auth_router = APIRouter(prefix='/auth')

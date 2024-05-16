@@ -82,14 +82,3 @@ async def get_resume(email: str, _: Annotated[None, Depends(AuthService.secure)]
     except Exception as error:
         raise HTTPException(400, detail=str(error))
     
-
-@lead_router.get('/auth/token', responses={400: {'model': ErrorOutput}})
-async def get_resume(email: str, _: Annotated[None, Depends(AuthService.secure)]):
-    try:
-        base64_resume_file =  await lead_service.get_resume_by_email(email)
-
-        return Response(content=base64_resume_file, 
-                        media_type="application/octet-stream", 
-                        headers={"Content-Disposition": f"attachment; filename={email}.pdf"})    
-    except Exception as error:
-        raise HTTPException(400, detail=str(error))
