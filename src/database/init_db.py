@@ -3,6 +3,7 @@ from asyncio import run
 from connection import engine
 from src.models import Base
 
+
 async def create_database():
     async with engine.begin() as connection:
         await connection.run_sync(Base.metadata.drop_all)
