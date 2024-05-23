@@ -15,6 +15,7 @@ python-multipart = "*"
 mailchimp = "*"
 mailchimp-transactional = "*"
 python-jose = {extras = ["cryptography"], version = "*"}
+yagmail = "*"
 
 [dev-packages]
 

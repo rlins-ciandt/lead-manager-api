@@ -1,8 +1,12 @@
+import sys
+from pathlib import Path
+
 from asyncio import run
 
-from connection import engine
-from src.models import Base
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
+from connection import engine
+from models import Base
 
 async def create_database():
     async with engine.begin() as connection:
